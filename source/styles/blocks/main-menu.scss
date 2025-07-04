@@ -1,0 +1,102 @@
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 19px;
+  padding: 8px 0 24px 115px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    padding: 11px;
+    background-color: $color-default-grey;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-default-black;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    transition: color $trans-default;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: $color-accent-transparent-50;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      transition: background-color $trans-default;
+    }
+
+    &:hover {
+      color: $color-accent-main;
+
+      &::before {
+        background-color: $color-accent-main;
+      }
+    }
+  }
+
+  &__button--sales::before {
+    mask-image: url("../../icons/fire.svg");
+  }
+
+  &__button--promotions::before {
+    mask-image: url("../../icons/lightning.svg");
+  }
+
+  &__button--gifts::before {
+    mask-image: url("../../icons/chest.svg");
+  }
+
+  &__button--events::before {
+    mask-image: url("../../icons/scroll.svg");
+  }
+
+  &__button--brands::before {
+    mask-image: url("../../icons/orc.svg");
+  }
+
+  @include vp-1279 {
+    gap: 10px;
+
+    &__button {
+      gap: 10px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  @include vp-1023 {
+    gap: 5px;
+    padding: 8px 0 12px 95px;
+
+    &__list {
+      gap: 5px;
+    }
+
+    &__button {
+      gap: 5px;
+      font-size: 12px;
+      line-height: 16px;
+
+      &::before {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}

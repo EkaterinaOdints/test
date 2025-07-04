@@ -1,0 +1,29 @@
+.catalog {
+  flex-direction: column;
+  background-color: $color-default-white;
+  border-radius: 8px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    width: 338px;
+    padding: 15px 30px 15px 20px;
+    background-color: $color-default-white;
+    border: none;
+    border-bottom: 1px solid $color-light-grey;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-color: $color-accent-transparent-50;
+      mask-position: center;
+      mask-repeat: no-repeat;
+    }
+  }
+}

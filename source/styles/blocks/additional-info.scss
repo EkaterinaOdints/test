@@ -1,0 +1,82 @@
+.additional-info {
+  background-color: $color-default-grey;
+  padding: 7px 0;
+  font-size: 14px;
+  line-height: 18px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 12px;
+  }
+
+  &__contacts-list {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__contacts-link {
+    display: flex;
+    gap: 8px;
+    color: $color-default-black;
+    text-decoration: none;
+    transition: color $trans-default;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      background-color: currentColor;
+    }
+
+    &:hover {
+      color: $color-accent-main;
+    }
+  }
+
+  &__contacts-link--address::before {
+    mask-image: url("../../icons/point.svg");
+    opacity: 0.5;
+  }
+
+  &__contacts-link--phone::before {
+    mask-image: url("../../icons/phone.svg");
+  }
+
+  &__working-hours {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__additional-menu {
+    width: 590px;
+  }
+
+  @include vp-1439 {
+    &__wrapper {
+      flex-grow: 0;
+    }
+
+    &__additional-menu {
+      width: auto;
+    }
+  }
+
+  @include vp-1023 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

@@ -1,0 +1,9 @@
+.header-wrapper-desktop {
+  &__catalog {
+    display: none;
+  }
+
+  &__catalog.is-catalog-opened {
+    display: flex;
+  }
+}

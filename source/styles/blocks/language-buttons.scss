@@ -1,0 +1,63 @@
+.language-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  &::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background-color: $color-default-black;
+    opacity: 0.5;
+    mask-image: url("../../icons/planet.svg");
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    color: $color-black-transparent-40;
+    font-family: $ff-tenor-sans;
+    font-size: 14px;
+    line-height: 18px;
+    cursor: pointer;
+    transition: color $trans-default;
+
+    &::after {
+      content: "";
+      position: relative;
+      left: 3px;
+      display: block;
+      width: 1px;
+      height: 12px;
+      background-color: $color-default-black;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: $color-default-black;
+    }
+  }
+
+  &__item:last-child::after {
+    content: none;
+  }
+
+  &__item.is-active {
+    color: $color-default-black;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,50 @@
+.actions-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 16px;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid $color-darker-grey;
+    border-radius: 4px;
+    transition: border-color $trans-default;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-color: $color-default-black;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      transition: background-color $trans-default;
+    }
+
+    &:hover {
+      border-color: #cdbecd;
+
+      &::before {
+        background-color: $color-accent-main;
+      }
+    }
+  }
+
+  &__link--like::before {
+    mask-image: url("../../icons/like.svg");
+  }
+
+  &__link--hunter::before {
+    mask-image: url("../../icons/hunter.svg");
+  }
+
+  &__link--cart::before {
+    mask-image: url("../../icons/cart.svg");
+  }
+}

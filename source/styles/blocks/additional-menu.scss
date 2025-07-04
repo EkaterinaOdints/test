@@ -1,0 +1,19 @@
+.additional-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 16px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  &__link {
+    color: $color-default-black;
+    text-decoration: none;
+    transition: color $trans-default;
+
+    &:hover {
+      color: $color-accent-main;
+    }
+  }
+}

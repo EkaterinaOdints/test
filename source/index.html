@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Описание сайта">
+    <title>Тестовое задание</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="favicons/manifest.webmanifest" crossorigin="use-credentials">
+    <link rel="preload" href="fonts/TenorSans.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/TenorSans.woff" as="font" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper header-wrapper-desktop">
+        <div class="header-wrapper-desktop__additional-info additional-info">
+          <div class="container">
+            <div class="additional-info__wrapper">
+              <ul class="additional-info__contacts-list">
+                <li class="additional-info__contacts-item">
+                  <a class="additional-info__contacts-link additional-info__contacts-link--address" href="#" target="_blank" rel="noopener noreferrer">Сайлент-Хилл</a>
+                </li>
+                <li class="additional-info__contacts-item">
+                  <a class="additional-info__contacts-link additional-info__contacts-link--phone" href="tel:+75555553750">+7 555 555-37-50</a>
+                </li>
+              </ul>
+              <div class="additional-info__working-hours">
+                <span>Ежедневно</span>
+                <span>9:00 — 21:00</span>
+              </div>
+            </div>
+            <ul class="additional-info__additional-menu additional-menu">
+              <li class="additional-menu__item">
+                <a class="additional-menu__link" href="#">Доставка</a>
+              </li>
+              <li class="additional-menu__item">
+                <a class="additional-menu__link" href="#">Оплата</a>
+              </li>
+              <li class="additional-menu__item">
+                <a class="additional-menu__link" href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="container">
+          <div class="header-wrapper-desktop__site-controls site-controls">
+            <div class="site-controls__logo logo">
+              <img src="images/logo.svg" alt="Логотип компании" width="80" height="80">
+            </div>
+            <button class="site-controls__catalog-button is-catalog-opened" type="button">
+              <span class="visually-hidden">Открыть каталог</span>
+            </button>
+            <form class="site-controls__search-form search-form" action="/search" method="get">
+              <input class="search-form__input" type="text" name="search" placeholder="Поиск товаров...">
+              <button class="search-form__button" type="submit" data-text="Найти">Найти</button>
+            </form>
+            <ul class="site-controls__social-list social-list">
+              <li class="social-list__item">
+                <a class="social-list__link social-list__link--telegram" href="#">
+                  <span class="visually-hidden">Telegram</span>
+                </a>
+              </li>
+              <li class="social-list__item">
+                <a class="social-list__link social-list__link--whatsapp" href="#">
+                  <span class="visually-hidden">Whatsapp</span>
+                </a>
+              </li>
+            </ul>
+            <div class="site-controls__language-buttons language-buttons">
+              <div class="language-buttons__wrapper">
+                <button class="language-buttons__item is-active" type="button">RU</button>
+                <button class="language-buttons__item" type="button">EN</button>
+              </div>
+            </div>
+            <ul class="site-controls__actions-list actions-list">
+              <li class="actions-list__item">
+                <a class="actions-list__link actions-list__link--like" href="#">
+                  <span class="visually-hidden">Перейти в избранное</span>
+                </a>
+              </li>
+              <li class="actions-list__item">
+                <a class="actions-list__link actions-list__link--hunter" href="#">
+                  <span class="visually-hidden">Перейти в личный кабинет</span>
+                </a>
+              </li>
+              <li class="actions-list__item">
+                <a class="actions-list__link actions-list__link--cart" href="#">
+                  <span class="visually-hidden">Перейти в корзину</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <nav class="header-wrapper-desktop__main-menu main-menu">
+            <ul class="main-menu__list">
+              <li class="main-menu__item">
+                <a class="main-menu__button main-menu__button--sales" href="#">Акции</a>
+              </li>
+              <li class="main-menu__item">
+                <button class="main-menu__button main-menu__button--promotions submenu-button" type="button">Горячее предложение</button>
+                <ul class="main-menu__submenu1 submenu"></ul>
+              </li>
+              <li class="main-menu__item">
+                <button class="main-menu__button main-menu__button--gifts submenu-button" type="button">Подарочные наборы</button>
+                <ul class="main-menu__submenu1 submenu"></ul>
+              </li>
+              <li class="main-menu__item">
+                <button class="main-menu__button main-menu__button--events submenu-button" type="button">События</button>
+                <ul class="main-menu__submenu1 submenu"></ul>
+              </li>
+              <li class="main-menu__item">
+                <a class="main-menu__button main-menu__button--brands" href="#">Наши бренды</a>
+              </li>
+            </ul>
+            <a class="button-build" href="#">Собрать компьютер</a>
+          </nav>
+        </div>
+        <ul class="header-wrapper-desktop__catalog catalog is-catalog-opened">
+          <li class="catalog__item catalog__item--smartphones-gadgets">
+            <button class="catalog__button submenu-button" type="button">Смартфоны и гаджеты</button>
+            <ul class="menu__list-submenu2 submenu">
+              <li class="submenu__list-item submenu__list-item--apple">
+                <a class="submenu__list-button" href="#">Apple iPhone</a>
+                <span class="submenu__list-amount">123</span>
+              </li>
+              <li class="submenu__list-item submenu__list-item--gadgets">
+                <button class="submenu__list-button submenu-button" type="button">Гаджеты</button>
+                <span class="submenu__list-amount">227</span>
+                <ul class="menu__list-submenu3 submenu">
+                  <li class="submenu__list-item submenu__list-item--smart-watch">
+                    <a class="submenu__list-button" href="#">Смарт-часы</a>
+                    <span class="submenu__list-amount">15</span>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--smart-rings">
+                    <a class="submenu__list-button" href="#">Смарт-кольца</a>
+                    <span class="submenu__list-amount">34</span>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--headphones">
+                    <a class="submenu__list-button" href="#">Наушники</a>
+                    <span class="submenu__list-amount">21</span>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--headsets">
+                    <a class="submenu__list-button" href="#">Гарнитуры</a>
+                    <span class="submenu__list-amount">12</span>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--portable-audio">
+                    <a class="submenu__list-button" href="#">Портативное аудио</a>
+                    <span class="submenu__list-amount">42</span>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--smart-gadgets">
+                    <a class="submenu__list-button" href="#">Умные гаджеты</a>
+                    <span class="submenu__list-amount">46</span>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--vr-glasses">
+                    <a class="submenu__list-button" href="#">Очки VR</a>
+                    <span class="submenu__list-amount">49</span>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--blogers">
+                    <a class="submenu__list-button" href="#">Для блогеров</a>
+                    <span class="submenu__list-amount">32</span>
+                  </li>
+                </ul>
+              </li>
+              <li class="submenu__list-item submenu__list-item--iphone16">
+                <a class="submenu__list-button" href="#">iPhone 16</a>
+                <span class="submenu__list-amount">120</span>
+              </li>
+              <li class="submenu__list-item submenu__list-item--folding">
+                <a class="submenu__list-button" href="#">Складные</a>
+                <span class="submenu__list-amount">30</span>
+              </li>
+              <li class="submenu__list-item submenu__list-item--realme">
+                <a class="submenu__list-button" href="#">realme</a>
+                <span class="submenu__list-amount">120</span>
+              </li>
+              <li class="submenu__list-item submenu__list-item--huawei-mate-x6">
+                <a class="submenu__list-button" href="#">Huawei Mate X6</a>
+                <span class="submenu__list-amount">100</span>
+              </li>
+              <li class="submenu__list-item submenu__list-item--button">
+                <a class="submenu__list-button" href="#">Кнопочные</a>
+                <span class="submenu__list-amount">23</span>
+              </li>
+              <li class="submenu__list-item submenu__list-item--home">
+                <a class="submenu__list-button" href="#">Домашние</a>
+                <span class="submenu__list-amount">17</span>
+              </li>
+              <li class="submenu__list-item submenu__list-item--samsung">
+                <a class="submenu__list-button" href="#">Samsung</a>
+                <span class="submenu__list-amount">27</span>
+              </li>
+            </ul>
+          </li>
+          <li class="catalog__item catalog__item--laptops">
+            <button class="catalog__button submenu-button" type="button">Ноутбуки и компьютеры</button>
+            <ul class="menu__list-submenu2 submenu"></ul>
+          </li>
+          <li class="catalog__item catalog__item--TV">
+            <button class="catalog__button submenu-button" type="button">Телевизоры и цифровое ТВ</button>
+            <ul class="menu__list-submenu2 submenu"></ul>
+          </li>
+          <li class="catalog__item catalog__item--stereo">
+            <button class="catalog__button submenu-button" type="button">Аудиотехника</button>
+            <ul class="menu__list-submenu2 submenu"></ul>
+          </li>
+          <li class="catalog__item catalog__item--sales">
+            <button class="catalog__button submenu-button" type="button">Акции</button>
+            <ul class="menu__list-submenu2 submenu"></ul>
+          </li>
+          <li class="catalog__item catalog__item--new">
+            <button class="catalog__button submenu-button" type="button">Новинки</button>
+            <ul class="menu__list-submenu2 submenu"></ul>
+          </li>
+        </ul>
+      </div>
+      <div class="header__wrapper header-wrapper-mobile">
+        <div class="header-wrapper-mobile__additional-info additional-info">
+          <div class="additional-info__language-buttons language-buttons">
+            <div class="language-buttons__wrapper">
+              <button class="language-button" type="button">RU</button>
+              <button class="language-button" type="button">EN</button>
+            </div>
+          </div>
+          <a class="additional-info__contacts-link" href="tel:+75555553750">+7 555 555-37-50</a>
+        </div>
+        <div class="header-wrapper-mobile__site-controls site-controls">
+          <div class="site-controls__wrapper">
+            <button class="site-controls__menu-button" type="button">
+              <span class="visually-hidden">Открыть меню</span>
+            </button>
+            <div class="actions-list__item actions-list__item--hunter">
+              <a class="actions-list__link" href="">
+                <span class="visually-hidden">Перейти в личный кабинет</span>
+              </a>
+            </div>
+            <div class="header__logo logo">
+              <img src="images/logo.svg" alt="Логотип компании" width="70" height="70">
+            </div>
+            <div class="actions-list__item actions-list__item--like">
+              <a class="actions-list__link" href="">
+                <span class="visually-hidden">Перейти в избранное</span>
+              </a>
+            </div>
+            <div class="actions-list__item actions-list__item--cart">
+              <a class="actions-list__link" href="">
+                <span class="visually-hidden">Перейти в корзину</span>
+              </a>
+            </div>
+          </div>
+          <form class="site-controls__search-form search-form" action="/search" method="get">
+            <input class="search-form__input" type="text" name="search" placeholder="Поиск товаров...">
+            <button class="search-form__button" type="submit" data-text="Найти">Найти</button>
+          </form>
+          <div class="header-wrapper-mobile__menu menu">
+            <div class="menu__additional-info menu-additional-info">
+              <ul class="menu-additional-info__contacts-list">
+                <li class="menu-additional-info__contacts-item menu-additional-info__contacts-item--address">
+                  <a class="menu-additional-info__contacts-link" href="#" target="_blank" rel="noopener noreferrer">Сайлент-Хилл</a>
+                </li>
+                <li class="menu-additional-info__contacts-item menu-additional-info__contacts-item--working-hours">
+                  <span>Ежедневно</span>
+                  <span>9:00 — 21:00</span>
+                </li>
+              </ul>
+              <ul class="menu-additional-info__social-list social-list">
+                <li class="social-list__item social-list__item--telegram">
+                  <a class="social-list__link">
+                    <span class="visually-hidden">Telegram</span>
+                  </a>
+                </li>
+                <li class="social-list__item social-list__item--whatsapp">
+                  <a class="social-list__link">
+                    <span class="visually-hidden">Whatsapp</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <ul class="menu__list">
+              <li class="menu__list-item menu__list-item--catalog">
+                <button class="menu__list-button submenu-button" type="button">Каталог</button>
+                <ul class="menu__list-submenu1 submenu">
+                  <li class="submenu__list-item submenu__list-item--smartphones-gadgets">
+                    <button class="submenu__list-button submenu-button" type="button">Смартфоны и гаджеты</button>
+                    <ul class="menu__list-submenu2 submenu">
+                      <li class="submenu__list-item submenu__list-item--apple">
+                        <a class="submenu__list-button" href="#">Apple iPhone</a>
+                        <span class="submenu__list-amount">123</span>
+                      </li>
+                      <li class="submenu__list-item submenu__list-item--gadgets">
+                        <button class="submenu__list-button submenu-button" type="button">Гаджеты</button>
+                        <span class="submenu__list-amount">227</span>
+                        <ul class="menu__list-submenu3 submenu">
+                          <li class="submenu__list-item submenu__list-item--smart-watch">
+                            <a class="submenu__list-button" href="#">Смарт-часы</a>
+                            <span class="submenu__list-amount">15</span>
+                          </li>
+                          <li class="submenu__list-item submenu__list-item--smart-rings">
+                            <a class="submenu__list-button" href="#">Смарт-кольца</a>
+                            <span class="submenu__list-amount">34</span>
+                          </li>
+                          <li class="submenu__list-item submenu__list-item--headphones">
+                            <a class="submenu__list-button" href="#">Наушники</a>
+                            <span class="submenu__list-amount">21</span>
+                          </li>
+                          <li class="submenu__list-item submenu__list-item--headsets">
+                            <a class="submenu__list-button" href="#">Гарнитуры</a>
+                            <span class="submenu__list-amount">12</span>
+                          </li>
+                          <li class="submenu__list-item submenu__list-item--portable-audio">
+                            <a class="submenu__list-button" href="#">Портативное аудио</a>
+                            <span class="submenu__list-amount">42</span>
+                          </li>
+                          <li class="submenu__list-item submenu__list-item--smart-gadgets">
+                            <a class="submenu__list-button" href="#">Умные гаджеты</a>
+                            <span class="submenu__list-amount">46</span>
+                          </li>
+                          <li class="submenu__list-item submenu__list-item--vr-glasses">
+                            <a class="submenu__list-button" href="#">Очки VR</a>
+                            <span class="submenu__list-amount">49</span>
+                          </li>
+                          <li class="submenu__list-item submenu__list-item--blogers">
+                            <a class="submenu__list-button" href="#">Для блогеров</a>
+                            <span class="submenu__list-amount">32</span>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="submenu__list-item submenu__list-item--iphone16">
+                        <a class="submenu__list-button" href="#">iPhone 16</a>
+                        <span class="submenu__list-amount">120</span>
+                      </li>
+                      <li class="submenu__list-item submenu__list-item--folding">
+                        <a class="submenu__list-button" href="#">Складные</a>
+                        <span class="submenu__list-amount">30</span>
+                      </li>
+                      <li class="submenu__list-item submenu__list-item--realme">
+                        <a class="submenu__list-button" href="#">realme</a>
+                        <span class="submenu__list-amount">120</span>
+                      </li>
+                      <li class="submenu__list-item submenu__list-item--huawei-mate-x6">
+                        <a class="submenu__list-button" href="#">Huawei Mate X6</a>
+                        <span class="submenu__list-amount">100</span>
+                      </li>
+                      <li class="submenu__list-item submenu__list-item--button">
+                        <a class="submenu__list-button" href="#">Кнопочные</a>
+                        <span class="submenu__list-amount">23</span>
+                      </li>
+                      <li class="submenu__list-item submenu__list-item--home">
+                        <a class="submenu__list-button" href="#">Домашние</a>
+                        <span class="submenu__list-amount">17</span>
+                      </li>
+                      <li class="submenu__list-item submenu__list-item--samsung">
+                        <a class="submenu__list-button" href="#">Samsung</a>
+                        <span class="submenu__list-amount">27</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--laptops">
+                    <button class="submenu__list-button submenu-button" type="button">Ноутбуки и компьютеры</button>
+                    <ul class="menu__list-submenu2 submenu"></ul>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--TV">
+                    <button class="submenu__list-button submenu-button" type="button">Телевизоры и цифровое ТВ</button>
+                    <ul class="menu__list-submenu2 submenu"></ul>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--stereo">
+                    <button class="submenu__list-button submenu-button" type="button">Аудиотехника</button>
+                    <ul class="menu__list-submenu2 submenu"></ul>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--sales">
+                    <button class="submenu__list-button submenu-button" type="button">Акции</button>
+                    <ul class="menu__list-submenu2 submenu"></ul>
+                  </li>
+                  <li class="submenu__list-item submenu__list-item--new">
+                    <button class="submenu__list-button submenu-button" type="button">Новинки</button>
+                    <ul class="menu__list-submenu2 submenu"></ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu__list-item menu__list-item--sales">
+                <a class="menu__list-button" href="#">Акции</a>
+              </li>
+              <li class="menu__list-item menu__list-item--promotions">
+                <button class="menu__list-button submenu-button" type="button">Горячее предложение</button>
+                <ul class="menu__list-submenu1 submenu"></ul>
+              </li>
+              <li class="menu__list-item menu__list-item--gifts">
+                <button class="menu__list-button submenu-button" type="button">Подарочные наборы</button>
+                <ul class="menu__list-submenu1 submenu"></ul>
+              </li>
+              <li class="menu__list-item menu__list-item--events">
+                <button class="menu__list-button submenu-button" type="button">События</button>
+                <ul class="menu__list-submenu1 submenu"></ul>
+              </li>
+              <li class="menu__list-item menu__list-item--brands">
+                <a class="menu__list-button" href="#">Наши бренды</a>
+              </li>
+            </ul>
+            <button class="button-build" type="button">
+              <span>Собрать компьютер</span>
+            </button>
+            <ul classs="menu__additional-menu additional-menu">
+              <li class="additional-menu__item">
+                <a class="additional-menu__link" href="#">Доставка</a>
+              </li>
+              <li class="additional-menu__item">
+                <a class="additional-menu__link" href="#">Оплата</a>
+              </li>
+              <li class="additional-menu__item">
+                <a class="additional-menu__link" href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h1>Страница для старта</h1>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+.social-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background-color: $color-default-grey;
+    border-radius: 4px;
+    transition: background-color $trans-default;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-color: $color-default-black;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      transition: background-color $trans-default;
+    }
+
+    &:hover {
+      background-color: $color-dark-grey;
+
+      &::before {
+        background-color: $color-accent-main;
+      }
+    }
+  }
+
+  &__link--telegram::before {
+    mask-image: url("../../icons/telegram.svg");
+  }
+
+  &__link--whatsapp::before {
+    mask-image: url("../../icons/whatsapp.svg");
+  }
+}
