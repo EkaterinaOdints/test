@@ -1,0 +1,48 @@
+.subcatalog {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  padding-left: 41px;
+  list-style-type: none;
+
+  &__title {
+    margin: 0 0 14px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  &__list-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: $ff-tenor-sans;
+    padding: 8px 0;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-default-black;
+    text-decoration: none;
+    border: none;
+  }
+
+  &__list-amount {
+    color: $color-black-transparent-50;
+  }
+
+  &__list-item.is-subcatalog-opened .subcatalog {
+    display: flex;
+  }
+}

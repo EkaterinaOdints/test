@@ -1,4 +1,19 @@
 .header-wrapper-desktop {
+  &__catalog-container {
+    position: relative;
+  }
+
+  &__catalog-wrapper {
+    position: absolute;
+    left: 155px;
+    bottom: 0;
+    transform: translateY(100%);
+    overflow-y: auto;
+    width: max-content;
+    height: auto;
+    max-height: calc(100vh - 180px);
+  }
+
   &__catalog {
     display: none;
   }
