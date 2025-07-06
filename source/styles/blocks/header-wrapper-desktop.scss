@@ -3,18 +3,14 @@
     position: relative;
   }
 
-  &__catalog-wrapper {
+  &__catalog {
     position: absolute;
     left: 155px;
     bottom: 0;
     transform: translateY(100%);
     overflow-y: auto;
-    width: max-content;
     height: auto;
     max-height: calc(100vh - 180px);
-  }
-
-  &__catalog {
     display: none;
   }
 

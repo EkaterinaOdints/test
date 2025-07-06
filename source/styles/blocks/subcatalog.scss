@@ -1,14 +1,10 @@
 .subcatalog {
   display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: translateX(100%);
   flex-direction: column;
-  padding: 0;
-  margin: 0;
-  padding-left: 41px;
-  list-style-type: none;
+  gap: 14px;
+  width: 226px;
+  margin-left: 41px;
+  margin-right: 31px;
 
   &__title {
     margin: 0 0 14px;
@@ -24,7 +20,7 @@
     list-style-type: none;
   }
 
-  &__list-button {
+  &__item-button {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -36,13 +32,14 @@
     color: $color-default-black;
     text-decoration: none;
     border: none;
+    cursor: pointer;
   }
 
-  &__list-amount {
+  &__item-amount {
     color: $color-black-transparent-50;
   }
+}
 
-  &__list-item.is-subcatalog-opened .subcatalog {
-    display: flex;
-  }
+.subcatalog.is-subcatalog-opened {
+  display: flex;
 }

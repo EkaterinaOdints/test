@@ -1,0 +1,33 @@
+.catalog-tab-menu-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 30px 15px 20px;
+    background-color: $color-default-white;
+    border: none;
+    border-bottom: 1px solid $color-light-grey;
+    font-family: $ff-tenor-sans;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-default-black;
+    text-decoration: none;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-color: $color-accent-transparent-50;
+      mask-position: center;
+      mask-repeat: no-repeat;
+    }
+  }
+}
