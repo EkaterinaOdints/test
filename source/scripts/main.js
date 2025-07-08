@@ -1,1 +1,1 @@
-import './catalog.js';
+import './catalog-menu.js';
