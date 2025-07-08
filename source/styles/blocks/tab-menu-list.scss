@@ -1,0 +1,130 @@
+.tab-menu-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 15px 30px 15px 20px;
+    background-color: $color-default-white;
+    border: none;
+    border-bottom: 1px solid $color-light-grey;
+    text-align: start;
+    font-family: $ff-tenor-sans;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-default-black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color $trans-default;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-color: $color-accent-transparent-50;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      transition: background-color $trans-default;
+    }
+
+    &:hover {
+      background-color: $color-light-grey;
+
+      &::before {
+        background-color: $color-accent-main;
+      }
+    }
+  }
+
+  &__button.is-active {
+    background-color: $color-light-grey;
+  }
+
+  &__button--smartphones-gadgets {
+    &::before {
+      mask-image: url("../../icons/menu-phone.svg");
+    }
+  }
+
+  &__button--laptops-computers {
+    &::before {
+      mask-image: url("../../icons/menu-laptop.svg");
+    }
+  }
+
+  &__button--televisions-digital-TV {
+    &::before {
+      mask-image: url("../../icons/menu-tv.svg");
+    }
+  }
+
+  &__button--audio {
+    &::before {
+      mask-image: url("../../icons/menu-stereo.svg");
+    }
+  }
+
+  &__button--sales {
+    &::before {
+      mask-image: url("../../icons/fire.svg");
+    }
+  }
+
+  &__button--new {
+    &::before {
+      mask-image: url("../../icons/menu-new.svg");
+    }
+  }
+
+  &__button--purpose {
+    &::before {
+      mask-image: url("../../icons/menu-people.svg");
+    }
+  }
+
+  &__button--occasion {
+    &::before {
+      mask-image: url("../../icons/menu-knives.svg");
+    }
+  }
+
+  &__button--filling {
+    &::before {
+      mask-image: url("../../icons/menu-computer-case.svg");
+    }
+  }
+
+  &__button--tab {
+    &::after {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 14px;
+      margin-left: auto;
+      background-color: $color-default-black;
+      mask-image: url("../../icons/angle.svg");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      transition: background-color $trans-default;
+    }
+
+    &:hover {
+      &::after {
+        background-color: $color-accent-transparent-50;
+      }
+    }
+  }
+
+  &__button--tab.is-active {
+    &::after {
+        background-color: $color-accent-transparent-50;
+      }
+  }
+}

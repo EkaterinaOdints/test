@@ -14,6 +14,25 @@
     margin: 0;
   }
 
+  &__item {
+    position: relative;
+  }
+
+  &__item-content {
+    position: absolute;
+    top: calc(100% + 24px);
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-y: auto;
+    height: auto;
+    max-height: calc(100vh - 180px);
+    display: none;
+    padding: 30px 0 23px;
+    background-color: $color-default-white;
+    border-radius: 8px;
+    z-index: 5;
+  }
+
   &__button {
     display: flex;
     align-items: center;
@@ -48,6 +67,10 @@
         background-color: $color-accent-main;
       }
     }
+  }
+
+  &__item-tab.is-active .main-menu__item-content {
+    display: flex;
   }
 
   &__button--sales::before {

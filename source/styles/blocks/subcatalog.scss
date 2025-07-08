@@ -20,10 +20,16 @@
     list-style-type: none;
   }
 
+  &__item-amount {
+    color: $color-black-transparent-50;
+    transition: color $trans-default;
+  }
+
   &__item-button {
     display: flex;
     align-items: center;
     gap: 6px;
+    width: 100%;
     font-family: $ff-tenor-sans;
     padding: 8px 0;
     background-color: transparent;
@@ -33,13 +39,36 @@
     text-decoration: none;
     border: none;
     cursor: pointer;
+    transition: color $trans-default;
+
+    &:hover,
+    &:hover .subcatalog__item-amount {
+      color: $color-accent-main;
+    }
   }
 
-  &__item-amount {
-    color: $color-black-transparent-50;
+  &__item-button--tab {
+    &::after {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 14px;
+      margin-left: auto;
+      background-color: $color-default-black;
+      mask-image: url("../../icons/angle.svg");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      transition: background-color $trans-default;
+    }
+
+    &:hover {
+      &::after {
+        background-color: $color-accent-transparent-50;
+      }
+    }
   }
 }
 
-.subcatalog.is-subcatalog-opened {
+.subcatalog.is-active {
   display: flex;
 }

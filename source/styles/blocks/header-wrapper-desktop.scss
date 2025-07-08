@@ -14,7 +14,19 @@
     display: none;
   }
 
-  &__catalog.is-catalog-opened {
+  &__catalog.is-active {
     display: flex;
   }
+}
+
+.header-wrapper-desktop.is-catalog-opened .catalog {
+  z-index: 5;
+}
+
+.header-wrapper-desktop.is-catalog-opened .site-controls__catalog-button {
+  z-index: 5;
+}
+
+.header-wrapper-desktop.is-main-menu-opened .main-menu__item.is-active {
+  z-index: 5;
 }

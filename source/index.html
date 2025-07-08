@@ -95,21 +95,85 @@
             </ul>
           </div>
           <nav class="header-wrapper-desktop__main-menu main-menu">
-            <ul class="main-menu__list">
+            <ul class="main-menu__list" data-js-main-menu>
               <li class="main-menu__item">
                 <a class="main-menu__button main-menu__button--sales" href="#">Акции</a>
               </li>
               <li class="main-menu__item">
-                <button class="main-menu__button main-menu__button--promotions subcatalog-button" type="button">Горячее предложение</button>
-                <ul class="main-menu__subcatalog1 subcatalog"></ul>
+                <a class="main-menu__button main-menu__button--promotions" href="#">Горячее предложение</a>
+              </li>
+              <li class="main-menu__item main-menu__item-tab" data-js-main-menu-tab>
+                <button class="main-menu__button main-menu__button--gifts" type="button" data-js-main-menu-button>Подарочные наборы</button>
+                <div class="main-menu__item-content" data-js-tab-wrapper>
+                  <ul class="main-menu__tab-list tab-menu-list" data-js-tab-1>
+                    <li class="tab-menu-list__item">
+                      <button class="tab-menu-list__button tab-menu-list__button--tab tab-menu-list__button--purpose" type="button" data-js-main-menu-tab-button data-js-tab-button="purpose">Кому</button>
+                    </li>
+                    <li class="tab-menu-list__item">
+                      <button class="tab-menu-list__button tab-menu-list__button--tab tab-menu-list__button--occasion" type="button" data-js-main-menu-tab-button data-js-tab-button="occasion">Повод</button>
+                    </li>
+                    <li class="tab-menu-list__item">
+                      <button class="tab-menu-list__button tab-menu-list__button--tab tab-menu-list__button--filling" type="button" data-js-main-menu-tab-button data-js-tab-button="filling">Наполнение</button>
+                    </li>
+                  </ul>
+                  <ul class="main-menu__tab-content-list" data-js-tab-content-wrapper>
+                    <li class="main-menu__tab-subcatalog subcatalog" data-js-tab-content="purpose">
+                      <p class="subcatalog__title">Кому</p>
+                      <ul class="subcatalog__list">
+                        <li class="subcatalog__item">
+                          <a class="subcatalog__item-button" href="#">
+                            <span>Для мужчин</span>
+                            <span class="subcatalog__item-amount">123</span>
+                          </a>
+                        </li>
+                        <li class="subcatalog__item">
+                          <a class="subcatalog__item-button" href="#">
+                            <span>Для женщин</span>
+                            <span class="subcatalog__item-amount">63</span>
+                          </a>
+                        </li>
+                        <li class="subcatalog__item">
+                          <a class="subcatalog__item-button" href="#">
+                            <span>Папе</span>
+                            <span class="subcatalog__item-amount">120</span>
+                          </a>
+                        </li>
+                        <li class="subcatalog__item">
+                          <a class="subcatalog__item-button" href="#">
+                            <span>Сотрудникам</span>
+                            <span class="subcatalog__item-amount">30</span>
+                          </a>
+                        </li>
+                        <li class="subcatalog__item">
+                          <a class="subcatalog__item-button" href="#">
+                            <span>Мужу</span>
+                            <span class="subcatalog__item-amount">120</span>
+                          </a>
+                        </li>
+                        <li class="subcatalog__item">
+                          <a class="subcatalog__item-button" href="#">
+                            <span>Корпоративный</span>
+                            <span class="subcatalog__item-amount">100</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="main-menu__tab-subcatalog subcatalog" data-js-tab-content="occasion">
+                      <p class="subcatalog__title">Повод</p>
+                      <ul class="subcatalog__list"></ul>
+                    </li>
+                    <li class="main-menu__tab-subcatalog subcatalog" data-js-tab-content="filling">
+                      <p class="subcatalog__title">Наполнение</p>
+                      <ul class="subcatalog__list"></ul>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li class="main-menu__item">
-                <button class="main-menu__button main-menu__button--gifts subcatalog-button" type="button">Подарочные наборы</button>
-                <ul class="main-menu__subcatalog1 subcatalog"></ul>
-              </li>
-              <li class="main-menu__item">
-                <button class="main-menu__button main-menu__button--events subcatalog-button" type="button">События</button>
-                <ul class="main-menu__subcatalog1 subcatalog"></ul>
+                <button class="main-menu__button main-menu__button--events" type="button">События</button>
+                <div class="main-menu__item-content">
+                  <ul class="main-menu__subcatalog"></ul>
+                </div>
               </li>
               <li class="main-menu__item">
                 <a class="main-menu__button main-menu__button--brands" href="#">Наши бренды</a>
@@ -119,32 +183,32 @@
           </nav>
         </div>
         <div class="header-wrapper-desktop__catalog-container container">
-          <div class="header-wrapper-desktop__catalog catalog" data-js-catalog>
-            <div class="catalog__tab-menu catalog-tab-menu">
-              <ul class="catalog-tab-menu__list catalog-tab-menu-list" data-js-tab-1>
-                <li class="catalog-tab-menu-list__item">
-                  <button class="catalog-tab-menu-list__button" type="button"data-js-tab-button="smartphones-gadgets">Смартфоны и гаджеты</button>
+          <div class="header-wrapper-desktop__catalog catalog" data-js-catalog data-js-tab-wrapper>
+            <div class="catalog__tab-menu">
+              <ul class="catalog__tab-menu-list tab-menu-list" data-js-tab-1>
+                <li class="tab-menu-list__item">
+                  <button class="tab-menu-list__button tab-menu-list__button--tab tab-menu-list__button--smartphones-gadgets" type="button" data-js-tab-button="smartphones-gadgets">Смартфоны и гаджеты</button>
                 </li>
-                <li class="catalog-tab-menu-list__item">
-                  <button class="catalog-tab-menu-list__button" type="button" data-js-tab-button="laptops-computers">Ноутбуки и компьютеры</button>
+                <li class="tab-menu-list__item">
+                  <button class="tab-menu-list__button tab-menu-list__button--tab tab-menu-list__button--laptops-computers" type="button" data-js-tab-button="laptops-computers">Ноутбуки и компьютеры</button>
                 </li>
-                <li class="catalog-tab-menu-list__item">
-                  <button class="catalog-tab-menu-list__button" type="button" data-js-tab-button="televisions-digital-TV">Телевизоры и цифровое ТВ</button>
+                <li class="tab-menu-list__item">
+                  <button class="tab-menu-list__button tab-menu-list__button--tab tab-menu-list__button--televisions-digital-TV" type="button" data-js-tab-button="televisions-digital-TV">Телевизоры и цифровое ТВ</button>
                 </li>
-                <li class="catalog-tab-menu-list__item">
-                  <button class="catalog-tab-menu-list__button" type="button" data-js-tab-button="audio">Аудиотехника</button>
+                <li class="tab-menu-list__item">
+                  <button class="tab-menu-list__button tab-menu-list__button--tab tab-menu-list__button--audio" type="button" data-js-tab-button="audio">Аудиотехника</button>
                 </li>
-                <li class="catalog-tab-menu-list__item">
-                  <a class="catalog-tab-menu-list__button" href="#" data-js-tab-button="sales">Акции</a>
+                <li class="tab-menu-list__item">
+                  <a class="tab-menu-list__button tab-menu-list__button--sales" href="#" data-js-tab-button="sales">Акции</a>
                 </li>
-                <li class="catalog-tab-menu-list__item">
-                  <a class="catalog-tab-menu-list__button" href="#" data-js-tab-button="new">Новинки</a>
+                <li class="tab-menu-list__item">
+                  <a class="tab-menu-list__button tab-menu-list__button--new" href="#" data-js-tab-button="new">Новинки</a>
                 </li>
               </ul>
             </div>
-            <div class="catalog__tab-content catalog-tab-content">
+            <div class="catalog__tab-content catalog-tab-content" data-js-tab-content-wrapper>
               <ul class="catalog-tab-content__list" data-js-tab-2>
-                <li class="catalog-tab-content__item subcatalog is-subcatalog-opened" data-js-tab-content="smartphones-gadgets">
+                <li class="catalog-tab-content__item subcatalog" data-js-tab-content="smartphones-gadgets">
                   <p class="subcatalog__title">Смартфоны и гаджеты</p>
                   <ul class="subcatalog__list">
                     <li class="subcatalog__item">
@@ -154,7 +218,7 @@
                       </a>
                     </li>
                     <li class="subcatalog__item">
-                      <button class="subcatalog__item-button" type="button" data-js-tab-button="gadgets">
+                      <button class="subcatalog__item-button subcatalog__item-button--tab" type="button" data-js-tab-button="gadgets">
                         <span>Гаджеты</span>
                         <span class="subcatalog__item-amount">227</span>
                       </button>
