@@ -1,9 +1,11 @@
 .desktop-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 19px;
-  padding: 8px 0 24px 115px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 19px;
+    padding: 8px 0 24px 115px;
+  }
 
   &__list {
     display: flex;
@@ -52,12 +54,16 @@
   }
 
   @include vp-1279 {
-    gap: 10px;
+    &__wrapper {
+      gap: 10px;
+    }
   }
 
   @include vp-1023 {
-    gap: 5px;
-    padding: 8px 0 12px 95px;
+    &__wrapper {
+      gap: 5px;
+      padding: 8px 0 12px 95px;
+    }
 
     &__list {
       gap: 5px;

@@ -429,6 +429,7 @@ const useMobileMenu = () => {
     }
 
     headerMobile.classList.remove('is-mobile-menu-opened');
+    document.body.classList.remove('overlay');
     isMobileMenuOpened = false;
 
     mobileMenuItemCollection.forEach((item) => {
@@ -442,6 +443,7 @@ const useMobileMenu = () => {
 
   const openMobileMenu = () => {
     headerMobile.classList.add('is-mobile-menu-opened');
+    document.body.classList.add('overlay');
 
     isMobileMenuOpened = true;
 

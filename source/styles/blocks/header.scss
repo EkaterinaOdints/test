@@ -1,4 +1,11 @@
 .header {
+  position: sticky;
+  top: 0;
   background-color: $color-default-white;
   color: $color-default-black;
+  z-index: 5;
+}
+
+body {
+  height: 4000px;
 }

@@ -1,16 +1,28 @@
 .header-wrapper-desktop {
-  &__site-controls {
+  &__additional-info {
+    transition: height $trans-default;
+    overflow: hidden;
+  }
+
+  &__desktop-menu {
+    transition: height $trans-default;
+  }
+
+  &__site-controls-container {
     position: relative;
+  }
+
+  &__site-controls {
     align-items: center;
     gap: 8px;
     padding: 16px 0 8px 115px;
+    transition: padding $trans-default;
   }
 
   &__logo {
     position: absolute;
-    left: 0;
-    top: 16px;
-    margin-right: 19px;
+    left: 40px;
+    top: 10%;
   }
 
   &__catalog-button {
@@ -26,6 +38,7 @@
     border: 0;
     border-radius: 8px;
     cursor: pointer;
+    transition: opacity $trans-default;
 
     &::before {
       content: "";
@@ -36,6 +49,10 @@
       mask-image: url("../../icons/burger-desktop.svg");
       mask-position: center;
       mask-repeat: no-repeat;
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 
@@ -95,7 +112,6 @@
 
     &__logo {
       top: 8px;
-      margin-right: 0;
     }
 
     &__catalog-button {

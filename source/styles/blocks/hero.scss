@@ -1,0 +1,148 @@
+.hero {
+  position: relative;
+  background-image: linear-gradient(to right, #672870 20%, #4fe0ff 100%);
+  color: $color-default-white;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: calc(50% + 150px);
+    display: block;
+    width: 767px;
+    height: 706px;
+    background-image:
+      image-set(
+        url("../../images/hero/hero-desktop@1x.webp") 1x type("image/webp"),
+        url("../../images/hero/hero-desktop@2x.webp") 2x type("image/webp"),
+        url("../../images/hero/hero-desktop@1x.png") 1x type("image/png"),
+        url("../../images/hero/hero-desktop@2x.png") 2x type("image/png")
+      );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    max-width: 760px;
+    z-index: 2;
+    padding: 84px 60px;
+  }
+
+  &__promotion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  &__promotion p {
+    margin: 0;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__description p {
+    margin: 0;
+  }
+
+  &__button {
+    display: block;
+    align-self: flex-start;
+    padding: 16px 40px;
+    background-color: $color-default-white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #672870;
+    font-size: 16px;
+    line-height: 20px;
+    transition: opacity $trans-default;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @include vp-1439 {
+    &::after {
+      top: -50px;
+      width: 600px;
+      height: 552px;
+    }
+
+    &__wrapper {
+      gap: 26px;
+      max-width: 700px;
+      z-index: 2;
+      padding: 70px 40px;
+    }
+  }
+
+  @include vp-1279 {
+    &::after {
+      top: 0;
+      width: 450px;
+      height: 414px;
+    }
+
+    &__wrapper {
+      gap: 20px;
+      max-width: 600px;
+      padding: 60px 40px;
+    }
+  }
+
+  @include vp-1023 {
+    &__wrapper {
+      max-width: 500px;
+    }
+
+    &__promotion {
+      gap: 10px;
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    &__description {
+      gap: 5px;
+    }
+  }
+
+  @include vp-767 {
+    &::after {
+      top: auto;
+      bottom: -100px;
+      left: 50%;
+      width: 397px;
+      height: 367px;
+      background-image:
+        image-set(
+          url("../../images/hero/hero-mobile@1x.webp") 1x type("image/webp"),
+          url("../../images/hero/hero-mobile@2x.webp") 2x type("image/webp"),
+          url("../../images/hero/hero-mobile@1x.png") 1x type("image/png"),
+          url("../../images/hero/hero-mobile@2x.png") 2x type("image/png")
+        );
+    }
+
+    &__wrapper {
+      gap: 14px;
+      padding: 32px 0 186px;
+    }
+
+    &__promotion {
+      gap: 7px;
+      font-size: 24px;
+      line-height: 26px;
+    }
+  }
+}

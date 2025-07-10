@@ -12,6 +12,7 @@
   }
 
   &__link {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,16 +42,38 @@
     }
   }
 
-  &__link--like::before {
-    mask-image: url("../../icons/like.svg");
+  &__link-counter {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: $color-accent-main;
+    border-radius: 50%;
+    color: $color-default-white;
+    font-size: 12px;
+    line-height: 16px;
   }
 
-  &__link--hunter::before {
-    mask-image: url("../../icons/hunter.svg");
+  &__link--like {
+    &::before {
+      mask-image: url("../../icons/like.svg");
+    }
   }
 
-  &__link--cart::before {
-    mask-image: url("../../icons/cart.svg");
+  &__link--hunter {
+    &::before {
+      mask-image: url("../../icons/hunter.svg");
+    }
+  }
+
+  &__link--cart {
+    &::before {
+      mask-image: url("../../icons/cart.svg");
+    }
   }
 
   @include vp-767 {

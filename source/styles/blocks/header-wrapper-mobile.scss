@@ -8,7 +8,7 @@
 
   &__site-controls {
     flex-direction: column;
-    gap: 10px;
+    padding-bottom: 24px;
   }
 
   &__site-controls-wrapper {
@@ -33,7 +33,7 @@
       width: 28px;
       height: 15px;
       background-color: $color-default-white;
-      mask-image: url("../../icons/burger-desktop.svg");
+      mask-image: url("../../icons/burger-mobile.svg");
       mask-position: center;
       mask-repeat: no-repeat;
     }
@@ -45,7 +45,7 @@
 
   &__menu-wrapper {
     display: none;
-    padding: 24px 0 32px;
+    padding: 0 0 32px;
   }
 
   &__menu-wrapper .container {
