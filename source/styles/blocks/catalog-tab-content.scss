@@ -9,5 +9,13 @@
 
   &__list:last-child .subcatalog {
     margin-right: 39px;
+
+    @include vp-1279 {
+      margin-right: 20px;
+    }
+
+    @include vp-1023 {
+      margin-right: 15px;
+    }
   }
 }

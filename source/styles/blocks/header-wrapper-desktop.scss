@@ -1,4 +1,66 @@
 .header-wrapper-desktop {
+  &__site-controls {
+    position: relative;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 0 8px 115px;
+  }
+
+  &__logo {
+    position: absolute;
+    left: 0;
+    top: 16px;
+    margin-right: 19px;
+  }
+
+  &__catalog-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100px;
+    height: 48px;
+    background-color: $color-accent-main;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 41px;
+      height: 16px;
+      background-color: $color-default-white;
+      mask-image: url("../../icons/burger-desktop.svg");
+      mask-position: center;
+      mask-repeat: no-repeat;
+    }
+  }
+
+  &__search-form {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-right: 8px;
+    min-width: 250px;
+    max-width: 654px;
+  }
+
+  &__social-list {
+    flex-shrink: 0;
+  }
+
+  &__language-buttons {
+    flex-shrink: 0;
+    margin-left: 21px;
+    margin-right: 37px;
+  }
+
+  &__actions-list {
+    flex-shrink: 0;
+  }
+
   &__catalog-container {
     position: relative;
   }
@@ -10,12 +72,50 @@
     transform: translateY(100%);
     overflow-y: auto;
     height: auto;
-    max-height: calc(100vh - 180px);
+    max-height: calc(100vh - 200px);
     display: none;
   }
 
   &__catalog.is-active {
     display: flex;
+  }
+
+  @include vp-1439 {
+    &__catalog {
+      max-height: calc(100vh - 240px);
+    }
+  }
+
+  @include vp-1023 {
+    &__site-controls {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      padding: 8px 0 8px 95px;
+    }
+
+    &__logo {
+      top: 8px;
+      margin-right: 0;
+    }
+
+    &__catalog-button {
+      width: 75px;
+      margin-right: auto;
+    }
+
+    &__search-form {
+      order: 3;
+      max-width: none;
+      margin-right: 0;
+    }
+
+    &__catalog {
+      left: 120px;
+    }
+  }
+
+  @include vp-767 {
+    display: none;
   }
 }
 

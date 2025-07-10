@@ -1,0 +1,40 @@
+.mobile-submenu {
+  &__list-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    padding: 11px;
+    background-color: $color-default-grey;
+    text-decoration: none;
+    color: $color-default-black;
+    font-family: $ff-tenor-sans;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.mobile-submenu__list-item.is-active > .mobile-submenu-button {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 38px;
+  padding: 24px 0;
+  background-color: $color-default-white;
+  font-size: 20px;
+  line-height: 24px;
+
+  &::before {
+    content: none;
+  }
+
+  &::after {
+    margin-left: 0;
+    transform: rotate(180deg);
+  }
+
+  .mobile-submenu__list-amount {
+    display: none;
+  }
+}

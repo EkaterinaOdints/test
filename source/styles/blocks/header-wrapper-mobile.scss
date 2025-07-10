@@ -1,0 +1,108 @@
+.header-wrapper-mobile {
+  display: none;
+  flex-direction: column;
+
+  .menu__list {
+    display: none;
+  }
+
+  &__site-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__site-controls-wrapper {
+    padding: 10px 0;
+  }
+
+  &__menu-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background-color: $color-accent-main;
+    padding: 0;
+    border: 0;
+    border-radius: 5px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 15px;
+      background-color: $color-default-white;
+      mask-image: url("../../icons/burger-desktop.svg");
+      mask-position: center;
+      mask-repeat: no-repeat;
+    }
+  }
+
+  &__logo {
+    margin: 0 auto;
+  }
+
+  &__menu-wrapper {
+    display: none;
+    padding: 24px 0 32px;
+  }
+
+  &__menu-wrapper .container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__menu-contacts {
+    margin-top: 8px;
+  }
+
+  @include vp-767 {
+    display: flex;
+  }
+}
+
+.header-wrapper-mobile.is-mobile-menu-opened .header-wrapper-mobile__menu-wrapper {
+  display: flex;
+}
+
+.header-wrapper-mobile.is-mobile-menu-opened .header-wrapper-mobile__menu-button {
+  background-color: $color-light-grey;
+
+  &::before {
+    width: 14px;
+    height: 14px;
+    background-color: $color-default-black;
+    mask-image: url("../../icons/close.svg");
+  }
+}
+
+.header-wrapper-mobile.is-mobile-menu-opened {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-default-white;
+  overflow: auto;
+}
+
+.header-wrapper-mobile.is-mobile-submenu-opened .mobile-menu-contacts,
+.header-wrapper-mobile.is-mobile-submenu-opened .button-build,
+.header-wrapper-mobile.is-mobile-submenu-opened .additional-menu,
+.header-wrapper-mobile.is-mobile-submenu-opened .mobile-menu__list-item {
+  display: none;
+}
+
+.header-wrapper-mobile .mobile-menu__list-item.is-active {
+  display: block;
+}
+
+.mobile-submenu__list-item.is-hidden {
+  display: none;
+}
+
+.mobile-submenu__list-item.is-active {
+  display: block;
+}

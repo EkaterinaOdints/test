@@ -5,18 +5,26 @@
 @import "./common/fonts.scss";
 
 /* BLOCKS */
+@import "./blocks/menu-button.scss";
 @import "./blocks/header.scss";
 @import "./blocks/header-wrapper-desktop.scss";
 @import "./blocks/additional-info.scss";
 @import "./blocks/additional-menu.scss";
 @import "./blocks/site-controls.scss";
+@import "./blocks/logo.scss";
 @import "./blocks/search-form.scss";
 @import "./blocks/social-list.scss";
 @import "./blocks/language-buttons.scss";
 @import "./blocks/actions-list.scss";
-@import "./blocks/main-menu.scss";
+@import "./blocks/desktop-menu.scss";
 @import "./blocks/button-build.scss";
 @import "./blocks/catalog.scss";
 @import "./blocks/tab-menu-list.scss";
 @import "./blocks/catalog-tab-content.scss";
 @import "./blocks/subcatalog.scss";
+@import "./blocks/dropdown.scss";
+@import "./blocks/header-wrapper-mobile.scss";
+@import "./blocks/mobile-menu.scss";
+@import "./blocks/mobile-menu-contacts.scss";
+@import "./blocks/mobile-submenu.scss";
+@import "./blocks/mobile-submenu-button.scss";

@@ -1,0 +1,49 @@
+.mobile-menu-contacts {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  &__address-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__address-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: $color-default-black;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-color: $color-black-transparent-30;
+      mask-position: center;
+      mask-repeat: no-repeat;
+    }
+  }
+
+  &__address-link--address {
+    &::before {
+      mask-image: url("../../icons/point.svg");
+    }
+  }
+
+  &__address-link--working-hours {
+    &::before {
+      mask-image: url("../../icons/clock.svg");
+    }
+  }
+
+  &__social-list {
+    flex-shrink: 0;
+  }
+}

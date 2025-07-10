@@ -1,10 +1,15 @@
 .actions-list {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
   margin: 0;
   gap: 16px;
+
+  &__item {
+    flex-shrink: 0;
+  }
 
   &__link {
     display: flex;
@@ -12,7 +17,7 @@
     align-items: center;
     width: 48px;
     height: 48px;
-    border: 1px solid $color-darker-grey;
+    border: 1px solid $color-dark-grey;
     border-radius: 4px;
     transition: border-color $trans-default;
 
@@ -46,5 +51,19 @@
 
   &__link--cart::before {
     mask-image: url("../../icons/cart.svg");
+  }
+
+  @include vp-767 {
+    gap: 6px;
+
+    &__link {
+      width: 40px;
+      height: 40px;
+
+      &::before {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }

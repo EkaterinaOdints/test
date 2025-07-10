@@ -1,0 +1,140 @@
+.menu-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 11px;
+  border-radius: 8px;
+  background-color: $color-default-grey;
+  font-family: $ff-tenor-sans;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-default-black;
+  text-decoration: none;
+  border: none;
+  transition: color $trans-default;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: $color-accent-transparent-50;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    transition: background-color $trans-default;
+  }
+
+  &:hover {
+    color: $color-accent-main;
+
+    &::before {
+      background-color: $color-accent-main;
+    }
+  }
+
+  &--catalog {
+    &::before {
+      mask-image: url("../../icons/burger-mobile.svg");
+      background-color: $color-accent-main;
+    }
+  }
+
+  &--sales {
+    &::before {
+      mask-image: url("../../icons/fire.svg");
+    }
+  }
+
+  &--promotions {
+    &::before {
+      mask-image: url("../../icons/lightning.svg");
+    }
+  }
+
+  &--gifts {
+    &::before {
+      mask-image: url("../../icons/chest.svg");
+    }
+  }
+
+  &--events {
+    &::before {
+      mask-image: url("../../icons/scroll.svg");
+    }
+  }
+
+  &--brands{
+    &::before {
+      mask-image: url("../../icons/orc.svg");
+    }
+  }
+
+  &--smartphones-gadgets {
+    &::before {
+      mask-image: url("../../icons/menu-phone.svg");
+    }
+  }
+
+  &--laptops-computers {
+    &::before {
+      mask-image: url("../../icons/menu-laptop.svg");
+    }
+  }
+
+  &--televisions-digital-TV {
+    &::before {
+      mask-image: url("../../icons/menu-tv.svg");
+    }
+  }
+
+  &--audio {
+    &::before {
+      mask-image: url("../../icons/menu-stereo.svg");
+    }
+  }
+
+  &--sales {
+    &::before {
+      mask-image: url("../../icons/fire.svg");
+    }
+  }
+
+  &--new {
+    &::before {
+      mask-image: url("../../icons/menu-new.svg");
+    }
+  }
+
+
+  @include vp-1279 {
+    gap: 10px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  @include vp-1023 {
+    gap: 5px;
+    font-size: 12px;
+    line-height: 16px;
+
+    &::before {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @include vp-767 {
+    gap: 17px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 20px;
+
+    &::before {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

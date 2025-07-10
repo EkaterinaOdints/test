@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  padding: 0;
+  padding: 0 0 23px;
   margin: 0;
 
   &__button {
@@ -13,7 +13,7 @@
     padding: 15px 30px 15px 20px;
     background-color: $color-default-white;
     border: none;
-    border-bottom: 1px solid $color-light-grey;
+    border-bottom: 1px solid $color-extralight-grey;
     text-align: start;
     font-family: $ff-tenor-sans;
     font-size: 16px;
@@ -28,6 +28,7 @@
       display: block;
       width: 24px;
       height: 24px;
+      flex-shrink: 0;
       background-color: $color-accent-transparent-50;
       mask-position: center;
       mask-repeat: no-repeat;
@@ -35,7 +36,7 @@
     }
 
     &:hover {
-      background-color: $color-light-grey;
+      background-color: $color-extralight-grey;
 
       &::before {
         background-color: $color-accent-main;
@@ -44,7 +45,7 @@
   }
 
   &__button.is-active {
-    background-color: $color-light-grey;
+    background-color: $color-extralight-grey;
   }
 
   &__button--smartphones-gadgets {
@@ -107,6 +108,7 @@
       display: block;
       width: 8px;
       height: 14px;
+      flex-shrink: 0;
       margin-left: auto;
       background-color: $color-default-black;
       mask-image: url("../../icons/angle.svg");
@@ -118,6 +120,41 @@
     &:hover {
       &::after {
         background-color: $color-accent-transparent-50;
+      }
+    }
+  }
+
+  @include vp-1279 {
+    &__button {
+      gap: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      line-height: 20px;
+
+      &::before {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &__button--tab {
+      &::after {
+        width: 6px;
+        height: 12px;
+      }
+    }
+  }
+
+  @include vp-1023 {
+    padding: 0 0 10px;
+
+    &__button {
+      font-size: 14px;
+      line-height: 18px;
+
+      &::before {
+        width: 18px;
+        height: 18px;
       }
     }
   }

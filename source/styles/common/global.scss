@@ -61,6 +61,10 @@ video {
   @include vp-1023 {
     padding: 0 30px;
   }
+
+  @include vp-767 {
+    padding: 0 15px;
+  }
 }
 
 .visually-hidden {

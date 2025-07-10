@@ -9,13 +9,13 @@ let openedSub2;
 const isElementActive = (el) => el.classList.contains('is-active');
 
 const closeElement = (el) => {
-  if (isElementActive(el)) {
+  if (el && isElementActive(el)) {
     el.classList.remove('is-active');
   }
 };
 
 const openElement = (el) => {
-  if (!isElementActive(el)) {
+  if (el && !isElementActive(el)) {
     el.classList.add('is-active');
   }
 };
@@ -83,7 +83,7 @@ const toggleSub = (target) => {
   });
 };
 
-const useCatalog = () => {
+const useCatalogTab = () => {
   const catalogButton = headerDesktop.querySelector('[data-js-catalog-button]');
   const catalogButtonText = catalogButton.querySelector('[data-js-catalog-button-text]');
   const tabList1 = catalog.querySelector('[data-js-tab-1]');
@@ -161,7 +161,7 @@ const useCatalog = () => {
   }
 };
 
-const useMainMenu = () => {
+const useMainMenuTab = () => {
   const mainMenu = headerDesktop.querySelector('[data-js-main-menu]');
   const mainMenuTabCollection = mainMenu.querySelectorAll('[data-js-main-menu-tab]');
 
@@ -211,6 +211,7 @@ const useMainMenu = () => {
       closeMainMenu(menu);
       evt.target.addEventListener('mouseenter', openMainMenuOnHover);
       evt.target.removeEventListener('mouseout', closeMainMenuOnHover);
+
       if (openedSub1) {
         closeElement(openedSub1);
       }
@@ -245,13 +246,19 @@ const useMainMenu = () => {
 
   function onEscapeClick(evt) {
     if (evt.code === 'Escape') {
-      closeMainMenu(evt.target.closest('[data-js-main-menu-tab]'));
+      const button = openedMainMenu.querySelector('[data-js-main-menu-button]');
+      closeMainMenu(openedMainMenu);
+      button.addEventListener('mouseenter', openMainMenuOnHover);
+      button.removeEventListener('mouseout', closeMainMenuOnHover);
     }
   }
 
   function onDocumentClick(evt) {
     if (!evt.target.closest('[data-js-main-menu-tab]')) {
+      const button = openedMainMenu.querySelector('[data-js-main-menu-button]');
       closeMainMenu(openedMainMenu);
+      button.addEventListener('mouseenter', openMainMenuOnHover);
+      button.removeEventListener('mouseout', closeMainMenuOnHover);
     }
   }
 
@@ -262,5 +269,215 @@ const useMainMenu = () => {
   });
 };
 
-useCatalog();
-useMainMenu();
+const useMainMenuDropdown = () => {
+  const dropdownCollection = headerDesktop.querySelectorAll('[data-js-main-menu-dropdown]');
+
+  let openedDropdown = null;
+
+  const closeDropdown = (dropdown) => {
+    closeElement(dropdown);
+    document.body.classList.remove('overlay');
+    headerDesktop.classList.remove('is-main-menu-opened');
+    window.removeEventListener('click', onDocumentClick);
+    window.removeEventListener('keydown', onEscapeClick);
+    openedDropdown = null;
+  };
+
+  const openDropdown = (dropdown) => {
+    openElement(dropdown);
+    document.body.classList.add('overlay');
+    headerDesktop.classList.add('is-main-menu-opened');
+    window.addEventListener('click', onDocumentClick);
+    window.addEventListener('keydown', onEscapeClick);
+    openedDropdown = dropdown;
+  };
+
+  const toggleDropdown = (evt) => {
+    const dropdown = evt.target.closest('[data-js-main-menu-dropdown]');
+
+    if (isElementActive(dropdown)) {
+      closeDropdown(dropdown);
+    } else {
+      openDropdown(dropdown);
+    }
+  };
+
+  function onEscapeClick(evt) {
+    if (evt.code === 'Escape') {
+      closeDropdown(evt.target.closest('[data-js-main-menu-dropdown]'));
+    }
+  }
+
+  function onDocumentClick(evt) {
+    if (!evt.target.closest('[data-js-main-menu-dropdown]')) {
+      closeDropdown(openedDropdown);
+    }
+  }
+
+  dropdownCollection.forEach((dropdown) => {
+    const button = dropdown.querySelector('[data-js-dropdown-button]');
+    button.addEventListener('click', toggleDropdown);
+  });
+};
+
+const useMobileMenu = () => {
+  const headerMobile = document.querySelector('[data-js-header-mobile]');
+  const menuButton = headerMobile.querySelector('[data-js-mobile-menu-button]');
+  const mobileMenu = headerMobile.querySelector('[data-js-mobile-menu]');
+  const mobileMenuItemCollection = mobileMenu.querySelectorAll('[data-js-mobile-menu-item]');
+
+  let isMobileMenuOpened = false;
+  let isButtonTouched = false;
+  let openedMobileSubmenu = null;
+
+  const isElementHidden = (el) => el.classList.contains('is-hidden');
+
+  const hideElement = (el) => {
+    el.classList.add('is-hidden');
+  };
+
+  const showElement = (el) => {
+    el.classList.remove('is-hidden');
+  };
+
+  const openSubmenu = (item) => {
+    const submenu = item.querySelector('[data-js-mobile-submenu]');
+    const submenuItemCollection = submenu.querySelectorAll(':scope > [data-js-mobile-submenu-item]');
+    const submenuParentCollection = item.parentNode.querySelectorAll(':scope > [data-js-mobile-submenu-item]');
+    const buttonToHide = item.parentNode.parentNode.querySelector(':scope > [data-js-mobile-submenu-button]');
+
+    submenuItemCollection.forEach((subItem) => {
+      const button = subItem.querySelector('[data-js-mobile-submenu-button]');
+
+      if (button.classList.contains('mobile-submenu-button')) {
+        button.addEventListener('click', toggleMobileSubmenu);
+      }
+
+      showElement(subItem);
+    });
+
+    submenuParentCollection.forEach((subItem) => {
+      hideElement(subItem);
+    });
+
+    if (buttonToHide) {
+      hideElement(buttonToHide);
+    }
+
+    openElement(item);
+    showElement(item);
+    openedMobileSubmenu = item;
+    headerMobile.classList.add('is-mobile-submenu-opened');
+  };
+
+  const closeSubmenu = (item) => {
+    const submenu = item.querySelector('[data-js-mobile-submenu]');
+    const submenuItemCollection = submenu.querySelectorAll(':scope > [data-js-mobile-submenu-item]');
+    const submenuParentCollection = item.parentNode.querySelectorAll(':scope > [data-js-mobile-submenu-item]');
+
+    submenuItemCollection.forEach((subItem) => {
+      const button = subItem.querySelector('[data-js-mobile-submenu-button]');
+
+      if (button.classList.contains('mobile-submenu-button')) {
+        button.removeEventListener('click', toggleMobileSubmenu);
+      }
+
+      hideElement(subItem);
+    });
+
+    submenuParentCollection.forEach((subItem) => {
+      if (isElementHidden(subItem)) {
+        showElement(subItem);
+      }
+    });
+
+    closeElement(item);
+    hideElement(item);
+    openedMobileSubmenu = item.parentNode.parentNode;
+
+    if (isElementActive(openedMobileSubmenu)) {
+      openSubmenu(openedMobileSubmenu);
+
+      const buttonToHide = openedMobileSubmenu.querySelector(':scope > [data-js-mobile-submenu-button]');
+
+      if (buttonToHide) {
+        showElement(buttonToHide);
+      }
+    } else {
+      headerMobile.classList.remove('is-mobile-submenu-opened');
+    }
+
+  };
+
+  function toggleMobileSubmenu(evt) {
+    const item = evt.target.closest('[data-js-mobile-submenu-item]');
+
+    if (item === openedMobileSubmenu) {
+      closeSubmenu(openedMobileSubmenu);
+    } else {
+      openSubmenu(item);
+    }
+  }
+
+  const closeMobileMenu = () => {
+    const openedSubmenuArray = Array.from(headerMobile.querySelectorAll('[data-js-mobile-submenu-item].is-active'));
+
+    if (openedSubmenuArray) {
+      openedSubmenuArray.reverse().forEach((submenu) => {
+        closeSubmenu(submenu);
+      });
+    }
+
+    headerMobile.classList.remove('is-mobile-menu-opened');
+    isMobileMenuOpened = false;
+
+    mobileMenuItemCollection.forEach((item) => {
+      const button = item.querySelector('[data-js-mobile-menu-button]');
+
+      if (button.classList.contains('mobile-submenu-button')) {
+        button.removeEventListener('click', toggleMobileSubmenu);
+      }
+    });
+  };
+
+  const openMobileMenu = () => {
+    headerMobile.classList.add('is-mobile-menu-opened');
+
+    isMobileMenuOpened = true;
+
+    mobileMenuItemCollection.forEach((item) => {
+      const button = item.querySelector('[data-js-mobile-menu-button]');
+
+      if (button.classList.contains('mobile-submenu-button')) {
+        button.addEventListener('click', toggleMobileSubmenu);
+      }
+    });
+  };
+
+  const toggleMobileMenu = () => {
+    if (isMobileMenuOpened) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  };
+
+  menuButton.addEventListener('touchstart', (evt) => {
+    isButtonTouched = true;
+    evt.preventDefault();
+    toggleMobileMenu();
+  }, { passive: false });
+
+  menuButton.addEventListener('click', () => {
+    if (isButtonTouched) {
+      isButtonTouched = false;
+      return;
+    }
+    toggleMobileMenu();
+  });
+};
+
+useCatalogTab();
+useMainMenuTab();
+useMainMenuDropdown();
+useMobileMenu();

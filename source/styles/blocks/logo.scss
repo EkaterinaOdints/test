@@ -1,0 +1,10 @@
+.logo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+
+  @include vp-767 {
+    width: 56px;
+    height: 56px;
+  }
+}

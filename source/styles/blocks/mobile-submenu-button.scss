@@ -1,0 +1,18 @@
+.mobile-submenu-button {
+  &::after {
+    content: "";
+    display: block;
+    width: 7px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-left: auto;
+    background-color: $color-default-black;
+    mask-image: url("../../icons/angle.svg");
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+}
+
+.mobile-submenu-button.is-hidden {
+  display: none;
+}

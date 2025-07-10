@@ -11,4 +11,20 @@
     display: flex;
     flex-grow: 1;
   }
+
+  @include vp-1279 {
+    padding: 25px 0;
+
+    &__tab-menu {
+      width: 280px;
+    }
+  }
+
+  @include vp-1023 {
+    padding: 10px 0;
+
+    &__tab-menu {
+      width: 200px;
+    }
+  }
 }
